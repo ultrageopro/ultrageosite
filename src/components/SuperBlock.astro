@@ -11,10 +11,7 @@ const { header } = Astro.props;
     .super-block {
         padding: 1rem;
         background-color: rgba(var(--accent), 0.1);
-        margin-bottom: clamp(1rem, 2vh + 1vw, 2rem);
-        margin-left: clamp(10px, 4vh + 2vw, 30px);
-        margin-right: clamp(10px, 4vh + 2vw, 30px);
-        margin-top: clamp(1rem, 2vh + 1vw, 2rem);
+        margin: clamp(1rem, 2vh + 1vw, 2rem) clamp(10px, 4vh + 2vw, 30px);
         border-radius: 16px;
         font-size: clamp(16px, 1.5vh + 0.5vw, 24px);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
