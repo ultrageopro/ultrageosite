@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CenteredImage from '../components/CenteredImage.astro';
+import UnderButton from '../components/UnderButton.astro';
+---
+
+<Layout title="Centered Image Page" description="What is it?">
+    <main class="page-container">
+        <h1 class="page-title">🔽 My Brand New Logo 🔽</h1>
+        <CenteredImage src="/images/brand-new-logo.jpg" alt="I hope you like it" />
+        <UnderButton text="Go Back Home" href="/" />
+    </main>
+</Layout>
+
+<style>
+    .page-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .page-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1rem;
+        color: rgb(var(--accent-light));
+    }
+
+    .page-container > :not(:last-child) {
+        margin-bottom: 2rem;
+    }
+</style>

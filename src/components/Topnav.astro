@@ -1,0 +1,43 @@
+<nav class="topnav">
+  <ul class="nav-list">
+    <li><a href="/about" class="nav-link"><b>About</b></a></li>
+    <li><a href="/blog" class="nav-link"><b>Blog</b></a></li>
+    <li><a href="/contacts" class="nav-link"><b>Contacts</b></a></li>
+  </ul>
+</nav>
+
+<style>
+  .topnav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    width: clamp(300px, 80%, 1200px);
+    margin: 2rem auto 1.5rem auto;
+    border-radius: 1rem;
+    background-color: rgba(var(--accent), 0.3);
+    color: rgb(var(--accent-light));
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 2.5rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    color: rgb(var(--accent-light));
+    text-decoration: none;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-link:hover {
+    color: rgb(var(--accent-light-hover));
+    text-decoration: underline;
+  }
+</style>

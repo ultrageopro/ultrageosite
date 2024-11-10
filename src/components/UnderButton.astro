@@ -1,0 +1,37 @@
+---
+const { text, href } = Astro.props;
+---
+
+<div class="button-container">
+  <a href={href} class="under-button">
+    <b>{text}</b>
+  </a>
+</div>
+
+<style>
+  .button-container {
+    max-width: 100%;
+    margin-left: clamp(10px, 4vh + 2vw, 30px);
+    margin-right: clamp(10px, 4vh + 2vw, 30px);
+  }
+
+  .under-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(var(--button-background));
+    color: rgb(var(--accent-light));
+    text-align: center;
+    text-decoration: none;
+    font-size: clamp(1rem, 1.5vh + 0.5vw, 1.5rem);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 1rem;
+  }
+
+  .under-button:hover {
+    background-color: rgb(var(--accent-dark));
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+</style>

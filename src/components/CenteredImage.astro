@@ -1,0 +1,24 @@
+---
+const { src, alt = "Centered image" } = Astro.props;
+---
+
+<div class="image-container">
+    <img src={src} alt={alt} class="centered-image" />
+</div>
+
+<style>
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: 2rem 0;
+    }
+
+    .centered-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+</style>
