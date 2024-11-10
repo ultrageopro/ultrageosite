@@ -1,38 +1,22 @@
 ---
-const { text, under = false } = Astro.props;
+const { text } = Astro.props;
 ---
 
-<footer class={under ? "footer" : "footer fixed-footer"}>
+<footer class="footer">
   <p>{text}</p>
 </footer>
 
 <style>
-    .footer {
-        display: flex;
-        justify-content: center;
-        padding: 1rem;
-        color: rgb(var(--accent-light));
-        text-align: center;
-        font-size: clamp(0.5rem, 1vh + 1vw, 1rem);
-        background-color: rgb(var(--footer-background));
-        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
-        border-radius: 16px;
-
-        margin-left: clamp(10px, 4vh + 2vw, 30px);
-        margin-right: clamp(10px, 4vh + 2vw, 30px);
-
-        position: relative;
-        margin-top: auto;
-    }
-
-    .fixed-footer {
-        position: fixed;
-        bottom: clamp(5px, 4vh + 2vw, 10px);
-        width: calc(100% - 2 * clamp(10px, 4vh + 2vw, 30px));
-        max-width: 800px;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-    }
-
+  .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(var(--accent-light));
+      text-align: center;
+      font-size: clamp(0.5rem, 1vh + 1vw, 1rem);
+      
+      width: 100%;
+      padding: 1rem;
+      margin-top: auto;
+  }
 </style>
