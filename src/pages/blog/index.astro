@@ -25,7 +25,7 @@ const posts = (await getCollection("blog") as Post[]).sort(
     <main class="main-container">
         <SuperBlock>
             <span slot="header">📝 Blog</span>
-            Here you can find my posts and articles. Please, read them carefully and don't forget to <a href="/contacts" class="accent-link">contact me</a> if you have any questions.
+            Here you can find my posts and articles. Please, read them carefully and don't forget to <a href="/contacts" class="accent-link">contact me</a> if you have any questions. If you don't have any questions, please, <a href="/contacts" class="accent-link">contact me</a> too.
         </SuperBlock>
         <UnderButton text="To the very beginning *click*" href="/" />
 
@@ -34,7 +34,7 @@ const posts = (await getCollection("blog") as Post[]).sort(
                 <span slot="header">{post.data.title}</span>
                 <span slot="post-type">{post.data.postType}</span>
                 <span>{post.data.description}</span>
-                <p><a href={`/blog/${post.slug}`} class="accent-link">Read more</a></p>
+                <p><a href={`/blog/${post.slug}`} class="accent-link">Go to the post</a></p>
             </SuperBlock>
         ))}
 

@@ -29,7 +29,7 @@ import UnderButton from '../components/UnderButton.astro';
         
         <UnderButton text="To the very beginning *click*" href="/" />
         
-        <SuperBlock>
+        <SuperBlock client:load>
             <span slot="header">👀 A bit about my <a href="https://github.com/ultrageopro", class="accent-link">GitHub</a></span>
             <img
                 class="stats-image w-full"
@@ -50,7 +50,7 @@ import UnderButton from '../components/UnderButton.astro';
             </div>
         </SuperBlock>
 
-        <SuperBlock>
+        <SuperBlock client:load>
             <span slot="header">👀 A bit about my <a href="https://www.last.fm/user/ultrageopro", class="accent-link">Music</a></span>
             <a href="https://www.last.fm/user/ultrageopro">
                 <img

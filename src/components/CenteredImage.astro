@@ -13,15 +13,24 @@ const { src, alt = "Centered image" } = Astro.props;
         align-items: center;
         width: 100%;
         margin: 2rem 0;
-        padding: 0 1rem; /* Добавляет небольшой отступ по краям */
-    }
+        padding: 0 1rem;
 
+    }
+    
+    
     .centered-image {
-        width: 100%; /* Занимает всю доступную ширину контейнера */
-        max-width: clamp(350px, 60%, 800px); /* Ограничивает размер между 300px и 800px в зависимости от экрана */
-        height: auto; /* Сохраняет пропорции изображения */
+        width: 100%;
+        max-width: clamp(350px, 60%, 800px);
+        height: auto;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .centered-image:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 </style>
 

@@ -1,10 +1,9 @@
 ---
-title: 'The Boy Who Ate a Tree'
-description: 'A cautionary tale about a Chinese boy who ate a tree, hoping to become wise and grown-up, only to learn that true wisdom comes with time and experience.'
-pubDate: '2024-11-1'
-postType: 'post'
+title: The Boy Who Ate a Tree
+description: A cautionary tale about a Chinese boy who ate a tree, hoping to become wise and grown-up, only to learn that true wisdom comes with time and experience.
+pubDate: 2024-11-1
+postType: post
 ---
-
 # The Boy Who Ate a Tree
 
 Once upon a time, in a small village in China, there lived a young boy named Wei. Wei was always curious about the world around him and loved to listen to the wise tales his grandmother told him. She often spoke of great heroes, magical creatures, and the secrets of nature. One night, while sitting by the fire, Wei’s grandmother told him a story about a mythical tree deep in the forest. She claimed that whoever ate its bark would gain wisdom beyond their years and grow up strong and wise.

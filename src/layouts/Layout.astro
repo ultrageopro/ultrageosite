@@ -37,10 +37,18 @@ const { title, description } = Astro.props;
 	</head>
 	<body class="page-container">
 		<Topnav />
-		<slot />
-		<Footer text={`© 2024 UltraGeoPro. ${randomQuote}`} />
+		<main>
+			<slot />
+		</main>
+		<Footer text={`© 2024 UltraGeoPro. ${randomQuote}`} client:load />
 	</body>
 </html>
+
+<style>
+	main {
+		margin-top: clamp(2rem, 10vh, 4rem);
+	}
+</style>
 
 <style is:global>
 	:root {
@@ -82,7 +90,7 @@ const { title, description } = Astro.props;
 	.page-container {
 		display: flex;
 		flex-direction: column;
-		min-height: 100dvh;
+		min-height: calc(100dvh-clamp(2rem, 10vh, 4rem));
 	}
 
 	main {

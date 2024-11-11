@@ -9,31 +9,28 @@
 </div>
 
 <style>
-  /* Обертка навигации на всю ширину страницы */
   .topnav-container {
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
-    background-color: #1a1c1f; /* Цвет фона страницы */
-    z-index: 1000; /* Уровень слоя */
+    background-color: #1a1c1f;
+    z-index: 100;
     padding-top: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  /* Навигационная панель внутри обертки */
   .topnav {
     display: flex;
     justify-content: center;
     padding: 1rem 3rem;
     margin: 0 auto;
-    border-radius: 1rem;
-    max-width: 1200px; /* Ограничиваем ширину панели навигации */
+    border-radius: 16px;
+    max-width: 1200px;
     background-color: rgba(var(--button-background));
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   }
 
-  /* Список навигации */
   .nav-list {
     display: flex;
     gap: 2.5rem;
@@ -42,7 +39,6 @@
     padding: 0;
   }
 
-  /* Ссылки навигации */
   .nav-link {
     color: rgb(var(--accent-light));
     text-decoration: none;
