@@ -3,7 +3,7 @@ const { title, services } = Astro.props;
 ---
 
 <div class="table-container">
-  <h2 class="table-title">{title}</h2>
+  <h2 class="table-title"><b>{title}</b></h2>
   <table class="service-table">
     <tbody>
       {services.map((service: { name: string, username: string, link: string }) => (

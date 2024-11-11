@@ -1,25 +1,39 @@
-<nav class="topnav">
-  <ul class="nav-list">
-    <li><a href="/about" class="nav-link"><b>About</b></a></li>
-    <li><a href="/blog" class="nav-link"><b>Blog</b></a></li>
-    <li><a href="/contacts" class="nav-link"><b>Contacts</b></a></li>
-  </ul>
-</nav>
+<div class="topnav-container">
+  <nav class="topnav">
+    <ul class="nav-list">
+      <li><a href="/about" class="nav-link"><b>About</b></a></li>
+      <li><a href="/blog" class="nav-link"><b>Blog</b></a></li>
+      <li><a href="/contacts" class="nav-link"><b>Contacts</b></a></li>
+    </ul>
+  </nav>
+</div>
 
 <style>
+  /* Обертка навигации на всю ширину страницы */
+  .topnav-container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #1a1c1f; /* Цвет фона страницы */
+    z-index: 1000; /* Уровень слоя */
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Навигационная панель внутри обертки */
   .topnav {
     display: flex;
     justify-content: center;
-    padding: 1rem;
-    width: clamp(300px, 80%, 1200px);
-    margin: 2rem auto 1.5rem auto;
+    padding: 1rem 3rem;
+    margin: 0 auto;
     border-radius: 1rem;
-    background-color: rgba(var(--accent), 0.3);
-    color: rgb(var(--accent-light));
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 1200px; /* Ограничиваем ширину панели навигации */
+    background-color: rgba(var(--button-background));
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   }
 
+  /* Список навигации */
   .nav-list {
     display: flex;
     gap: 2.5rem;
@@ -28,6 +42,7 @@
     padding: 0;
   }
 
+  /* Ссылки навигации */
   .nav-link {
     color: rgb(var(--accent-light));
     text-decoration: none;

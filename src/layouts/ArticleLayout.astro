@@ -1,0 +1,14 @@
+---
+import Layout from "./Layout.astro";
+import UnderButton from "../components/UnderButton.astro";
+
+const { title, description }  = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <article class="markdown-content mx-auto px-[2em] mt-[2rem] leading-relaxed">
+    <a href="/">Go home</a>
+    <slot />
+    <UnderButton text="To the very beginning *click*" href="/" />
+  </article>
+</Layout>

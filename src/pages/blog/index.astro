@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import UnderButton from '../../components/UnderButton.astro';
+import SuperBlock from '../../components/SuperBlock.astro';
+import { getCollection } from "astro:content";
+
+// Интерфейс для типизации постов
+interface Post {
+    data: {
+        title: string;
+        description: string;
+        postType: string;
+        pubDate: Date;
+    };
+    slug: string;
+}
+  
+// Приведение результата getCollection к типу Post[]
+const posts = (await getCollection("blog") as Post[]).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout title="UltraGeoSite - Blog" description="This is the blog page. Thank you for being with me when I am alone.">
+    <main class="main-container">
+        <SuperBlock>
+            <span slot="header">📝 Blog</span>
+            Here you can find my posts and articles. Please, read them carefully and don't forget to <a href="/contacts" class="accent-link">contact me</a> if you have any questions.
+        </SuperBlock>
+        <UnderButton text="To the very beginning *click*" href="/" />
+
+        {posts.map((post) => (
+            <SuperBlock>
+                <span slot="header">{post.data.title}</span>
+                <span slot="post-type">{post.data.postType}</span>
+                <span>{post.data.description}</span>
+                <p><a href={`/blog/${post.slug}`} class="accent-link">Read more</a></p>
+            </SuperBlock>
+        ))}
+
+    </main>
+</Layout>
+
+<style>
+    main {
+	  margin: auto;
+	  padding: 1rem;
+	  width: clamp(900px, 80%, 800px);
+	  max-width: 100%;
+	  color: white;
+	  font-size: clamp(16px, 2vw + 1rem, 20px);
+	  line-height: 1.6;
+	}
+</style>

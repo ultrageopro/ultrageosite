@@ -7,15 +7,13 @@ import UnderButton from '../components/UnderButton.astro';
 ---
 
 <Layout title="UltraGeoSite - About" description="This is the about page. Thank you for being with me when I am alone.">
-    <Topnav />
     <main class="mx-auto p-4 text-white leading-relaxed">
-        <UnderButton text="Go back *click*" href="/" />
         <SuperBlock>
             <span slot="header">💁 A lot of info about me</span>
             Actually, my name is <span class="accent-text font-bold">Korney</span>. I'm studying in Russia and actively involved in what’s called programming.
             I dedicate a lot of time to <span class="accent-text">data analysis</span> & <span class="accent-text">backend development</span>.
             Unfortunately, I had to learn Astro because of <a class="accent-link" href="https://fxgn.dev">@flexagoon</a>; truth be told, I hate frontend 👎
-            Over two years of dedicated development, I've created numerous projects, which you can read about in my <code><a href="https://github.com/ultrageopro/ultrageopro">README.md</a></code>. 
+            Over two years of dedicated development, I've created numerous projects, which you can read about in my <a href="https://github.com/ultrageopro/ultrageopro">README.md</a>. 
             I’m most proud of my <span class="accent-text">VPN service</span> <a class="accent-link" href="https://ultrageovpn.ru">ultrageovpn.ru</a>, <span class="accent-text">self-hosted services</span>
             (i think my server is going to explode soon), and my ability to passionately dislike frontend development.
             <br>
@@ -23,23 +21,74 @@ import UnderButton from '../components/UnderButton.astro';
             <br>
             I absolutely love the bands <a href="https://www.cagetheelephant.com/music/" class="accent-link">Cage The Elephant</a> and <a href="https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb" class="accent-link">Radiohead</a>. Their songs are really <i>cool</i> and filled with <i>deep meaning</i>, and, thankfully, it’s not Taylor Swift.
             <br>
-            Besides programming, I really enjoy studying <span class="accent-text">mathematics</span>, going to <span class="accent-text">exhibitions</span> and <span class="accent-text">theaters</span> (depending on my mood), and reading <span class="accent-text">philosophical treatises</span>.
+            Besides programming, I really enjoy studying <span class="accent-text">mathematics</span>, going to <span class="accent-text">exhibitions</span> and <span class="accent-text">theaters</span> (depending on my mood) and reading <span class="accent-text">philosophical treatises</span>.
             My favorite film is <a href="" class="accent-link">Interstellar</a>. I think it’s the best movie of all time.
             <br>
             On this site, you’ll find some of <a href="/blog" class="accent-link">my posts and articles</a> on various topics!
         </SuperBlock>
+        
+        <UnderButton text="To the very beginning *click*" href="/" />
+        
+        <SuperBlock>
+            <span slot="header">👀 A bit about my <a href="https://github.com/ultrageopro", class="accent-link">GitHub</a></span>
+            <img
+                class="stats-image w-full"
+                src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=ultrageopro&theme=zenburn"
+                alt="My GitHub stats, github is the worst gaming platform by the way"
+            >
+            <div class="image-row">
+                <img 
+                    class="stats-image"
+                    src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=ultrageopro&theme=zenburn"
+                    alt="another GitHub stats"
+                >
+                <img 
+                    class="stats-image"
+                    src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=ultrageopro&theme=zenburn&utcOffset=8"
+                    alt="another GitHub stats"
+                >
+            </div>
+        </SuperBlock>
+
+        <SuperBlock>
+            <span slot="header">👀 A bit about my <a href="https://www.last.fm/user/ultrageopro", class="accent-link">Music</a></span>
+            <a href="https://www.last.fm/user/ultrageopro">
+                <img
+                    src="https://lastfm-recently-played.vercel.app/api?user=ultrageopro"
+                    class="stats-image w-full"
+                    alt="My Last.FM stats, last.fm is the worst porn platform by the way"
+                >
+            </a>
+        </SuperBlock>
+        <UnderButton text="I want to read some articles *click*" href="/blog" />
     </main>
-    <Footer text="© 2024 UltraGeoPro. I love Peacocks." />
 </Layout>
 
 <style>
     main {
-        margin: auto;
         padding: 1rem;
         width: clamp(1200px, 80%, 800px);
         max-width: 100%;
         color: white;
         font-size: clamp(16px, 2vw + 1rem, 20px);
         line-height: 1.6;
+    }
+
+    .image-row {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
+    }
+
+    .stats-image {
+        min-width: 0px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 </style>

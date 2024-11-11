@@ -1,8 +1,25 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+import Footer from '../components/Footer.astro';
+import Topnav from '../components/Topnav.astro';
+
 interface Props {
 	title: string;
 	description?: string;
 }
+
+const quotes = [
+  "I love something that doesn't exist.",
+  "I love my computer monkey.",
+  "How about gambling with a computer monkey?",
+  "I want to live in Uganda.",
+  "Don't you think so?",
+  "I hope you'll like it.",
+  "I see you.",
+  "Stars are my friends.",
+];
+
+const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 const { title, description } = Astro.props;
 ---
@@ -16,9 +33,12 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body class="page-container">
+		<Topnav />
 		<slot />
+		<Footer text={`© 2024 UltraGeoPro. ${randomQuote}`} />
 	</body>
 </html>
 
@@ -28,7 +48,6 @@ const { title, description } = Astro.props;
 		--accent-light: 255, 223, 191;
 		--accent-dark: 204, 108, 37;
 		--accent-light-hover: 255, 209, 108;
-		--footer-background: 20, 22, 28;
 		--button-background: 20, 22, 28;
 		--accent-gradient: linear-gradient(
 			45deg,
@@ -63,10 +82,9 @@ const { title, description } = Astro.props;
 	.page-container {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh; /* Задает минимальную высоту для контейнера */
+		min-height: 100dvh;
 	}
 
-	/* Для автоматического расположения футера внизу */
 	main {
 		flex: 1;
 	}
@@ -75,15 +93,9 @@ const { title, description } = Astro.props;
 	  color: rgb(var(--accent-light));
 	}
   
-	.accent-link {
+	a {
 	  color: rgb(var(--accent-light));
 	  text-decoration: underline;
 	}
 
-	code {
-		background-color: rgba(var(--accent), 0.3);
-		padding: 0.15rem 0.25rem;
-		border-radius: 0.5rem;
-		font-size: clamp(16px, 1.5vh + 0.5vw, 24px);
-	}
 </style>
