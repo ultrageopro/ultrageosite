@@ -37,16 +37,22 @@ const { title, description } = Astro.props;
 	</head>
 	<body class="page-container">
 		<Topnav />
-		<main>
+
+		<div class="page-content">
 			<slot />
-		</main>
+		</div>
+		
 		<Footer text={`© 2024 UltraGeoPro. ${randomQuote}`} client:load />
 	</body>
 </html>
 
 <style>
-	main {
-		margin-top: clamp(2rem, 10vh, 4rem);
+	.page-content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		margin-top: clamp(4rem, 10vh, 6rem);
 	}
 </style>
 
@@ -57,12 +63,6 @@ const { title, description } = Astro.props;
 		--accent-dark: 204, 108, 37;
 		--accent-light-hover: 255, 209, 108;
 		--button-background: 20, 22, 28;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
 	}
 
 	@font-face {
@@ -90,11 +90,7 @@ const { title, description } = Astro.props;
 	.page-container {
 		display: flex;
 		flex-direction: column;
-		min-height: calc(100dvh-clamp(2rem, 10vh, 4rem));
-	}
-
-	main {
-		flex: 1;
+		min-height: calc(100dvh-clamp(4rem, 10vh, 6rem));
 	}
 
 	.accent-text {
