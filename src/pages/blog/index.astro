@@ -34,7 +34,7 @@ const posts = (await getCollection("blog") as Post[]).sort(
                 <span slot="header">{post.data.title}</span>
                 <span slot="post-type">{post.data.postType}</span>
                 <span>{post.data.description}</span>
-                <p><a href={`/blog/${post.slug}`} class="accent-link">Go to the post</a></p>
+                <p class="mt-3"><a href={`/blog/${post.slug}`} class="accent-link">Go to the post</a></p>
             </SuperBlock>
         ))}
 
