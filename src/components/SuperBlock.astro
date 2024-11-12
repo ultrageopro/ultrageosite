@@ -3,6 +3,9 @@
     <strong class="super-block-header"><slot name="header"></slot></strong>
     <p><slot /></p>
 </div>
+<div class="super-block-footer">
+    <p class="footer-webring"><slot name="footer-webring"></slot></p>
+</div>
 
 <style>
     .super-block {
@@ -12,6 +15,7 @@
         border-radius: 16px;
         font-size: clamp(16px, 1.5vh + 0.5vw, 24px);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        text-align: justify;
         
         display: flex;
         flex-direction: column;
@@ -37,8 +41,15 @@
         margin-bottom: 0.5rem;
     }
 
-    .super-block .post-type {
+    .super-block .post-type .footer-webring {
         font-size: clamp(14px, 1.5vh + 0.5vw, 20px);
         color: rgb(var(--accent-light));
+    }
+
+    .super-block-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(16px, 1.5vh + 0.5vw, 24px);
     }
 </style>

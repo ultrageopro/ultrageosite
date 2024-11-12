@@ -8,19 +8,6 @@ interface Props {
 	description?: string;
 }
 
-const quotes = [
-  "I love something that doesn't exist.",
-  "I love my computer monkey.",
-  "How about gambling with a computer monkey?",
-  "I want to live in Uganda.",
-  "Don't you think so?",
-  "I hope you'll like it.",
-  "I see you.",
-  "Stars are my friends.",
-];
-
-const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-
 const { title, description } = Astro.props;
 ---
 
@@ -42,7 +29,7 @@ const { title, description } = Astro.props;
 			<slot />
 		</div>
 		
-		<Footer text={`© 2024 UltraGeoPro. ${randomQuote}`} client:load />
+		<Footer text="© 2024 UltraGeoPro."/>
 	</body>
 </html>
 

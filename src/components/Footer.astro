@@ -1,9 +1,23 @@
----
-const { text } = Astro.props;
----
+<script>
+  const quotes = [
+    "I love something that doesn't exist.",
+    "I love my computer monkey.",
+    "How about gambling with a computer monkey?",
+    "I want to live in Uganda.",
+    "Don't you think so?",
+    "I hope you'll like it.",
+    "I see you.",
+    "Stars are my friends.",
+  ];
+
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+  var footer_p = document.getElementById("footer_p");
+  footer_p.textContent = "© 2024 UltraGeoPro." + " " + randomQuote;
+</script>
 
 <footer>
-  <p>{text}</p>
+  <p id="footer_p">{`© 2024 UltraGeoPro.`}</p>
 </footer>
 
 <style>
