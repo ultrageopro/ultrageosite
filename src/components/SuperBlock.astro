@@ -1,15 +1,26 @@
+---
+const hasHeader = !!Astro.slots.header;
+const hasPostType = !!Astro.slots["post-type"];
+const hasSmallHeader = !!Astro.slots["small-header"];
+const hasFooterWebring = !!Astro.slots["footer-webring"];
+---
+
 <div class="super-block">
-    <p class="post-type"><slot name="post-type"></slot></p>
-    <strong class="super-block-header"><slot name="header"></slot></strong>
+    {hasPostType && <p class="post-type"><slot name="post-type"></slot></p>}
+    {hasHeader && <strong class="super-block-header"><slot name="header"></slot></strong>}
+    {hasSmallHeader && <strong class="small-block-header"><slot name="small-header"></slot></strong>}
     <p><slot /></p>
 </div>
-<div class="super-block-footer">
-    <p class="footer-webring"><slot name="footer-webring"></slot></p>
-</div>
+
+{hasFooterWebring && (
+    <div class="super-block-footer">
+        <p class="footer-webring"><slot name="footer-webring"></slot></p>
+    </div>
+)}
 
 <style>
     .super-block {
-        padding: 1rem;
+        padding: clamp(1rem, 2vh + 1vw, 5rem);
         background-color: rgba(var(--accent), 0.1);
         margin: clamp(1rem, 2vh + 1vw, 2rem) clamp(10px, 4vh + 2vw, 30px);
         border-radius: 16px;
@@ -35,10 +46,16 @@
         color: rgb(var(--accent-light));
     }
 
-    .super-block .super-block-header {
+    .super-block .small-block-header {
         color: rgb(var(--accent));
         font-size: clamp(1rem, 2vh + 1vw, 2rem);
         margin-bottom: 0.5rem;
+    }
+
+    .super-block .super-block-header {
+        color: rgb(var(--accent));
+        font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2.5rem);
+        margin-bottom: 1rem;
     }
 
     .super-block .post-type .footer-webring {
