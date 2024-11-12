@@ -50,6 +50,12 @@ const { title, description } = Astro.props;
 		--accent-dark: 204, 108, 37;
 		--accent-light-hover: 255, 209, 108;
 		--button-background: 20, 22, 28;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light-hover)) 50%,
+			rgb(var(--accent-light)) 100%
+		);
 	}
 
 	@font-face {

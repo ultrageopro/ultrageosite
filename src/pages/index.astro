@@ -5,7 +5,7 @@ import SuperBlock from '../components/SuperBlock.astro';
 
 <Layout title="UltraGeoSite" description="Hello my name is Ultrageopro I want to live in Uganda">
   <main class="mx-auto p-4 text-white leading-relaxed">
-	<h1>Whoops! It's me! <strong class="accent-text">UltraGeoPro</strong></h1>
+	<h1><strong class="text-gradient">UltraGeoPro</strong></h1>
     <SuperBlock>
 		<span slot="header">🚀 Ok, let's get started</span>
 		I am <strong class="accent-text font-bold">UltraGeoPro</strong>, a developer from 
@@ -30,9 +30,32 @@ import SuperBlock from '../components/SuperBlock.astro';
 	}
   
 	h1 {
-	  font-size: clamp(2rem, 5vw + 1rem, 3rem);
+	  font-size: clamp(3.5rem, 5vw + 1rem, 5.5rem);
 	  text-align: center;
-	  margin-bottom: 0.5vh + 0.5vw;
-	  margin-top: 0.5vh + 0.5vw;
+	  margin-bottom: 1vh + 1vw;
+	  margin-top: 1vh + 1vw;
+	}
+
+	.text-gradient {
+		font-weight: bold;
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+		animation: gradient-animation 5s infinite cubic-bezier(0.86, 0, 0.07, 1);
+	}
+
+	/* Beautiful animation	 */
+	@keyframes gradient-animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 	}
   </style>
