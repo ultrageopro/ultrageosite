@@ -12,8 +12,11 @@
 
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-  var footer_p = document.getElementById("footer_p");
-  footer_p.textContent = "© 2024 UltraGeoPro." + " " + randomQuote;
+  document.addEventListener("astro:page-load", () =>{    
+    var footer_p = document.getElementById("footer_p");
+    footer_p.textContent = "© 2024 UltraGeoPro." + " " + randomQuote;
+  })
+
 </script>
 
 <footer>
