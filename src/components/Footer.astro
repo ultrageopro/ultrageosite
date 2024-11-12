@@ -2,31 +2,28 @@
   // I think this is a good idea to add a random quote to the footer
   // I don't have schizophrenia btw
   const quotes = [
-    "I love something that doesn't exist.",
     "I love my computer monkey.",
-    "How about gambling with a computer monkey?",
     "I want to live in Uganda.",
     "Don't you think so?",
     "I hope you'll like it.",
     "I see you.",
     "Stars are my friends.",
-    "Don't play computer games a lot.",
     "Your mom told me something.",
     "Happy new year.",
-    "Something is wrong. Something is wrong.",
+    "Something is wrong.",
   ];
 
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
   document.addEventListener("astro:page-load", () =>{    
-    var footer_p = document.getElementById("footer_p");
-    footer_p.textContent = "© 2024 UltraGeoPro." + " " + randomQuote;
+    var quote = document.getElementById("quote");
+    quote.textContent = randomQuote;
   })
 
 </script>
 
 <footer>
-  <p id="footer_p">{`© 2024 UltraGeoPro.`}</p>
+  <p><a href="https://github.com/ultrageopro">© 2024 UltraGeoPro</a> & <a href="https://github.com/ultrageopro/ultrageosite">src</a>. <span id="quote"></span></p>
 </footer>
 
 <style>
