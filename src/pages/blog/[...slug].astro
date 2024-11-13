@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import Prose from '../../components/Prose.astro';
+import PostComments from '../../components/PostComments.astro';
 
 interface Post {
     data: {
@@ -30,4 +31,6 @@ const { Content } = await entry.render();
   <Prose>
     <Content />
   </Prose>
+
+  <PostComments />
 </ArticleLayout>
