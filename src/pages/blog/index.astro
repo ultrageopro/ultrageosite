@@ -41,14 +41,19 @@ function formatDate(date: Date): string {
     <main class="main-container">
         <SuperBlock>
             <span slot="header">📝 Blog</span>
-            Here you can find my posts and articles. Please, read them carefully and don't forget to <a href="/contacts" class="accent-link">contact me</a> if you have any questions. If you don't have any questions, please, <a href="/contacts" class="accent-link">contact me</a> too.
+            Here you can find my posts and articles. Please, read them carefully and don't forget to <a href="/contacts" class="accent-link">contact me</a>
+            if you have any questions. If you don't have any questions, please, <a href="/contacts" class="accent-link">contact me</a> too.
+            Some of my posts were written in Russian, so don't be scared, cus i now that you may be confused because of that.
         </SuperBlock>
         <UnderButton text="To the very beginning *click*" href="/" />
 
-        <div class="flex flex-wrap gap-2 mb-2 justify-center items-center mt-[clamp(1rem,2vh+1vw,2rem)]" id="tags" data-tags={uniqueTypes}>
+        <div class="flex flex-wrap gap-1 justify-center items-center mt-[clamp(1rem,2vh+1vw,2rem)] 
+            m-[clamp(1rem,2vh+1vw,2rem)_clamp(10px,4vh+2vw,30px)]" 
+            id="tags" data-tags={uniqueTypes}>
             <p class="mr-2 text-responsive-small">Filter by type:</p>
             {uniqueTypes.map((artType) => <BlogFilter articleType={artType} />)}
-        </div>          
+        </div>
+        
 
         {posts.map((post) => (
             <SuperBlock additionalInfo={post.data.postType}>
