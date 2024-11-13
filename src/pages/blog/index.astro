@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import UnderButton from '../../components/UnderButton.astro';
 import SuperBlock from '../../components/SuperBlock.astro';
 import { getCollection } from "astro:content";
+import BlogFilter from '../../components/BlogFilter.astro';
 
 // Интерфейс для типизации постов
 interface Post {
@@ -19,6 +20,21 @@ interface Post {
 const posts = (await getCollection("blog") as Post[]).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+// Получаем типы, чтобы потом фильровать
+const types = posts.map((p) => p.data.postType).flat()
+
+// Получаем уникальные типы
+const uniqueTypes = [...new Set(types), "all"];
+
+// Форматирование даты, в виде 10.10.10 вот такой вот формат да
+function formatDate(date: Date): string {
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = String(date.getFullYear()).slice(-2);
+
+  return `${day}.${month}.${year}`;
+}
 ---
 
 <Layout title="UltraGeoSite - Blog" description="This is the blog page. Thank you for being with me when I am alone.">
@@ -29,9 +45,14 @@ const posts = (await getCollection("blog") as Post[]).sort(
         </SuperBlock>
         <UnderButton text="To the very beginning *click*" href="/" />
 
+        <div class="flex flex-wrap gap-2 mb-2 justify-center items-center mt-[clamp(1rem,2vh+1vw,2rem)]" id="tags" data-tags={uniqueTypes}>
+            <p class="mr-2 text-responsive-small">Filter by type:</p>
+            {uniqueTypes.map((artType) => <BlogFilter articleType={artType} />)}
+        </div>          
+
         {posts.map((post) => (
-            <SuperBlock>
-                <span slot="post-type">{post.data.postType}</span>
+            <SuperBlock additionalInfo={post.data.postType}>
+                <span slot="post-type"><span class="accent-text">{post.data.postType}</span> | {formatDate(post.data.pubDate)}</span>
                 <span slot="small-header">{post.data.title}</span>
                 <span>{post.data.description}</span>
                 <p class="mt-3"><a href={`/blog/${post.slug}`} class="accent-link">Go to the post</a></p>
@@ -52,3 +73,40 @@ const posts = (await getCollection("blog") as Post[]).sort(
 	  line-height: 1.6;
 	}
 </style>
+
+<script>
+    function filterPostsByAdditionalInfo(evt: MouseEvent) {
+        const target = evt.currentTarget as HTMLElement;
+        const selectedAdditionalInfo = target.getAttribute("data-type");
+
+        const allPosts = document.querySelectorAll('.super-block[article-type]');
+
+        // Скрываем все посты
+        allPosts.forEach((post) => {
+            (post as HTMLElement).style.display = "none";
+        });
+
+        // Если же выбраны все посты то собственно все и покажем
+        if (selectedAdditionalInfo === "all") {
+            allPosts.forEach((post) => {
+                (post as HTMLElement).style.display = "flex";
+            });
+            return;
+        }
+
+        // Показываем только те посты, которые соответствуют выбранному типу
+        const filteredPosts = document.querySelectorAll(`.super-block[article-type="${selectedAdditionalInfo}"]`);
+        filteredPosts.forEach((post) => {
+            (post as HTMLElement).style.display = "flex";
+        });
+    }
+
+    // Добавляем слушатели на кнопки после загрузки страницы
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll("#tags .filter-button");
+        buttons.forEach((button) => {
+            button.addEventListener("click", filterPostsByAdditionalInfo);
+        });
+    });
+</script>
+  

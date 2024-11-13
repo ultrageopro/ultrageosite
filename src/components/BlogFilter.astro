@@ -1,0 +1,29 @@
+---
+const { articleType: articleType } = Astro.props;
+---
+
+<div>
+  <button 
+    data-type={articleType}
+    class="filter-button bg-[rgb(var(--button-background))]
+    px-8 py-2 rounded-lg shadow
+    transition duration-300 ease-in-out
+    text-responsive-small
+    underline"
+    id="blogFilter"
+  >
+    {articleType}
+  </button>
+</div>
+
+<style>
+    .filter-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .filter-button:active {
+        transform: translateY(2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+</style>

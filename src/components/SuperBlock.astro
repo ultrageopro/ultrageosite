@@ -1,11 +1,13 @@
 ---
+const {additionalInfo} = Astro.props;
+
 const hasHeader = !!Astro.slots.header;
 const hasPostType = !!Astro.slots["post-type"];
 const hasSmallHeader = !!Astro.slots["small-header"];
 const hasFooterWebring = !!Astro.slots["footer-webring"];
 ---
 
-<div class="super-block">
+<div class=`super-block` article-type={additionalInfo}>
     {hasPostType && <p class="post-type"><slot name="post-type"></slot></p>}
     {hasHeader && <strong class="super-block-header"><slot name="header"></slot></strong>}
     {hasSmallHeader && <strong class="small-block-header"><slot name="small-header"></slot></strong>}

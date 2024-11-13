@@ -3,9 +3,9 @@ const { text, href } = Astro.props;
 ---
 
 <div class="button-container">
-  <a href={href} class="under-button">
+  <button type="button" class="under-button text-responsive-small" onclick={`window.location.href='${href}'`}>
     <b>{text}</b>
-  </a>
+  </button>
 </div>
 
 <style>
@@ -22,10 +22,10 @@ const { text, href } = Astro.props;
     background-color: rgb(var(--button-background));
     color: rgb(var(--accent-light));
     text-align: center;
-    text-decoration: none;
-    font-size: clamp(1rem, 1.5vh + 0.5vw, 1.5rem);
+    border: none;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s;
   }
 
@@ -39,4 +39,3 @@ const { text, href } = Astro.props;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 </style>
-
