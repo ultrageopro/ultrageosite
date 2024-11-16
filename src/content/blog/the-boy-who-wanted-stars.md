@@ -1,5 +1,5 @@
 ---
-title:    
+title: The Boy Who Wanted to Touch the Stars
 description: A story about a boy who dreamt of reaching the stars, only to discover the beauty of life in the small things around him.  
 pubDate: 2024-11-16  
 postType: post  
