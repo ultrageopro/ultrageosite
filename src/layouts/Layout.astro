@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
 import Footer from '../components/Footer.astro';
 import Topnav from '../components/Topnav.astro';
 
@@ -23,7 +22,6 @@ const { title, description } = Astro.props;
 		<meta property="og:image" content="/images/preview.jpg"/>
 
 		<title>{title}</title>
-		<ViewTransitions />
 	</head>
 	<body class="page-container">
 		<Topnav />
