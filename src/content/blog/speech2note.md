@@ -22,7 +22,7 @@ When a user sends a voice message or an audio file containing human speech, the 
 2. Converts the audio file to text using GigaChat.
 3. Saves the text on the server.
 4. Creates a summary using GigaChat.
-5. Sends the summary back to the users.
+5. Sends the summary back to the user.
 
 If the user is not registered, the bot will prompt them 
 to do so. After registration, their data will be 
