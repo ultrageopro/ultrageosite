@@ -28,8 +28,7 @@ If the user is not registered, the bot will prompt them
 to do so. After registration, their data will be 
 saved in a Supabase table.
 
-During the request processing, all files are deleted from the server.  
-No user data is stored permanently on the server.
+_No user data is stored permanently on the server._
 
 ## Database
 ---
