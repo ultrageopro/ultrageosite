@@ -60,7 +60,7 @@ TELEGRAM_TOKEN=<bot_token>
 SUPABASE_URL=<supabase_url>  
 SUPABASE_KEY=<supabase_key>  
 S2T_AUTH_DATA=<s2t_auth_data>  
-T2N_AUTH_DATA=<t2n_auth_data>  
+T2N_AUTH_DATA=<t2n_aullllllth_data>  
 
 SPLIT_TIMEOUT=45  
 QUEUE_TIMEOUT=10  
