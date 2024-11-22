@@ -10,8 +10,7 @@ postType: repo
 ## Repository
 ---
 
-**LINK** [https://github.com/ultrageopro/Speech2Note](https://github.com/ultrageopro/Speech2Note)
-
+**[REPO](https://github.com/ultrageopro/Speech2Note)** BY [ULTRAGEOPRO](https://github.com/ultrageopro)
 ## Bot Description
 ---
 The _Speech2Note_ bot enables creating 
