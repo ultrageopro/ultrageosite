@@ -6,73 +6,79 @@ postType: repo
 ---
 # Speech2Note
 
-![опля](https://i.ibb.co/pWB6G4S/Untitled.jpg)
-
-## Репозиторий
----
-**ССЫЛКА** https://github.com/ultrageopro/Speech2Note
-## Описание бота
+    
+## Repository
 ---
 
-Бот *Speech2Note* позволяет создать конспект из аудиофайла.
+**LINK** [https://github.com/ultrageopro/Speech2Note](https://github.com/ultrageopro/Speech2Note)
 
-При отправке голосового сообщения/аудиофайла, которое содержит человеческую речь бот:
-1. Сохранит файл на сервере
-2. Преобразует аудиофайл в текст с помощью GigaChat
-3. Сохранит текст на сервере
-4. Создаст конспект с помощью GigaChat
-5. Отправит конспект пользователю, спишет токены
-
-Если же пользователь не зарегистрирован в боте, бот предложит ему это сделать.
-После регистрации данные будут внесены в таблицу Supabase.
-
-В процессе обработки запроса все файлы удаляются с сервера.
-Никакие данные о пользователех не хранятся на сервере.
-
-## База данных
+## Bot Description
 ---
-База данных хранится в **Supabase**.
+The _Speech2Note_ bot enables creating 
+summaries from audio files.
 
-В таблице сохраняются только:
-- ID пользователя
-- Дата создания пользователя
-- Количество токенов пользователя
-- Имя пользователя
+When a user sends a voice message or an audio file containing human speech, the bot:
 
-## Очередь
+1. Saves the file on the server.
+2. Converts the audio file to text using GigaChat.
+3. Saves the text on the server.
+4. Creates a summary using GigaChat.
+5. Sends the summary back to the users.
+
+If the user is not registered, the bot will prompt them 
+to do so. After registration, their data will be 
+saved in a Supabase table.
+
+During the request processing, all files are deleted from the server.  
+No user data is stored permanently on the server.
+
+## Database
 ---
-Все запросы обрабатытся в **очереди**.
+The database is hosted in **Supabase**.
 
-Запросы из очереди выполняются последовательно, с определенным в `.env` файле временем ожидания. Также очередь имеет ограничение на максимальное число запросов.
+The table stores only:
 
-## Как использовать
+- User ID
+- User creation date
+- User token balance
+- User name
+
+## Queue
 ---
-Для начала создайте `.env` файл, в котором будут хранится все необходимательные переменные.
+All requests are processed in a **queue**.
 
-Пример `.env` файла:
+Requests in the queue are executed sequentially, with a delay specified in the `.env` file.  The queue also has a maximum request limit.
+
+## How to Use
+---
+First, create a `.env` file to store all required environment variables.
+
+Example `.env` file:
+
 ```
-TELEGRAM_TOKEN=<your_telegram_bot_token>
-SUPABASE_URL=<your_supabase_url>
-SUPABASE_KEY=<your_supabase_key>
-S2T_AUTH_DATA=<your_s2t_auth_data>
-T2N_AUTH_DATA=<your_t2n_auth_data>
+TELEGRAM_TOKEN=<bot_token>  
+SUPABASE_URL=<supabase_url>  
+SUPABASE_KEY=<supabase_key>  
+S2T_AUTH_DATA=<s2t_auth_data>  
+T2N_AUTH_DATA=<t2n_auth_data>  
 
-SPLIT_TIMEOUT=45
-QUEUE_TIMEOUT=10
-QUEUE_MAX_LEN=20
+SPLIT_TIMEOUT=45  
+QUEUE_TIMEOUT=10  
+QUEUE_MAX_LEN=20  
 ```
 
-- Для получения токена бота воспользуйтесь [Telegram BotFather](https://telegram.me/BotFather)
-- Для получения API ключа для Supabase воспользуйтесь [Supabase](https://supabase.com/docs)
-- Для получения API ключа для GigaChat воспользуйтесь [GigaChat](https://developers.sber.ru/)
+- To get the bot token, use [Telegram BotFather](https://telegram.me/BotFather).
+- To obtain an API key for Supabase, refer to [Supabase](https://supabase.com/docs).
+- To get an API key for GigaChat, visit [GigaChat](https://developers.sber.ru/).
 
-Далее запустите бота с помощю команды
+Next, run the bot with the command:
+
 ```bash
-docker compose up -d
+docker compose up -d  
 ```
 
-## Поддержка
+## Support
 ---
-Почта для связи: dev@ultrageopro.ru
+Contact email: [dev@ultrageopro.ru](mailto:dev@ultrageopro.ru)
 
-Телеграм: [@UltraGeoDev](https://t.me/UlraGeoDev)
+Telegram: [@UltraGeoDev](https://t.me/UltraGeoDev)
