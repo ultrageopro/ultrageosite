@@ -77,8 +77,14 @@ const { title, description } = Astro.props;
 		margin: 0;
 		padding: 0;
 		height: 100%;
-		background: #1a1c1f;
+		background:
+			radial-gradient(circle at top, rgba(var(--accent-light), 0.18), transparent 28%),
+			radial-gradient(circle at 20% 20%, rgba(var(--accent), 0.14), transparent 22%),
+			radial-gradient(circle at 80% 0%, rgba(var(--accent-dark), 0.16), transparent 26%),
+			linear-gradient(180deg, #111318 0%, #161b22 48%, #101218 100%);
 		font-family: "Ubuntu";
+		color: rgb(var(--accent-light-hover));
+		background-attachment: fixed;
 	}
 
 	.page-container {

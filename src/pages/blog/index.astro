@@ -47,7 +47,7 @@ function formatDate(date: Date): string {
         </SuperBlock>
         <UnderButton text="To the very beginning *click*" href="/" />
 
-        <div class="flex flex-wrap gap-1 justify-center items-center mt-[clamp(1rem,2vh+1vw,2rem)] 
+        <div class="filter-bar flex flex-wrap gap-2 justify-center items-center mt-[clamp(1rem,2vh+1vw,2rem)] 
             m-[clamp(1rem,2vh+1vw,2rem)_clamp(10px,4vh+2vw,30px)]" 
             id="tags" data-tags={uniqueTypes}>
             <p class="mr-2 text-responsive-small">Filter by type:</p>
@@ -77,6 +77,16 @@ function formatDate(date: Date): string {
 	  font-size: clamp(16px, 2vw + 1rem, 20px);
 	  line-height: 1.6;
 	}
+
+    .filter-bar {
+      padding: 0.8rem 1rem;
+      border: 1px solid rgba(var(--accent-light), 0.12);
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(var(--accent), 0.08), rgba(var(--button-background), 0.45));
+      backdrop-filter: blur(10px);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.14);
+    }
 </style>
 
 <script>

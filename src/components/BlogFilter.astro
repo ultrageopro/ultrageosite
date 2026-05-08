@@ -2,23 +2,44 @@
 const { articleType: articleType } = Astro.props;
 ---
 
-<div>
-  <button 
-    data-type={articleType}
-    class="filter-button bg-[rgb(var(--button-background))]
-    px-5 py-2 rounded-lg shadow
-    transition duration-300 ease-in-out
-    text-responsive-small
-    underline"
-    id="blogFilter"
-  >
-    {articleType}
-  </button>
-</div>
+<button data-type={articleType} class="filter-button" id="blogFilter">
+  {articleType}
+</button>
 
 <style>
-    .filter-button:active {
-        transform: translateY(4px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
+  .filter-button {
+    padding: 0.7rem 1.15rem;
+    border: 1px solid rgba(var(--accent-light), 0.16);
+    border-radius: 999px;
+    background:
+      linear-gradient(135deg, rgba(var(--accent-light), 0.1), rgba(var(--button-background), 0.72)),
+      rgba(var(--button-background), 0.58);
+    box-shadow:
+      0 12px 24px rgba(0, 0, 0, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    color: rgb(var(--accent-light-hover));
+    cursor: pointer;
+    font-size: clamp(0.95rem, 1vh + 0.45vw, 1.1rem);
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease,
+      background-color 0.25s ease;
+  }
+
+  .filter-button:hover {
+    transform: translateY(-1px);
+    border-color: rgba(var(--accent-light-hover), 0.28);
+    box-shadow:
+      0 16px 30px rgba(0, 0, 0, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .filter-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  }
 </style>

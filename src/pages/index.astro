@@ -9,7 +9,7 @@ import SuperBlock from '../components/SuperBlock.astro';
     <SuperBlock>
 		<span slot="header">🚀 Ok, let's get started</span>
 		I am <strong class="accent-text font-bold">UltraGeoPro</strong>, a developer from 
-		<a href="https://en.wikipedia.org/wiki/Moscow" class="accent-link"><i>Moscow</i></a>.
+		<span class="inline-accent">Moscow</span>. I currently work at <a href="https://tech.vk.com">VK Tech</a> as a backend developer. I also study computer science and mathematics at <span class="inline-accent">HSE AMI</span> & <span class="inline-accent">CU MCS</span>.
 		I think you’ll enjoy reading various posts on this site because I put in a lot of effort.
 		You can find all information about me in the 
 		<a href="/about" class="accent-link">About</a> section, and my contact details in the 
@@ -22,11 +22,13 @@ import SuperBlock from '../components/SuperBlock.astro';
 <style>
 	main {
 	  padding: 1rem;
-	  width: clamp(900px, 80%, 800px);
+	  width: min(100%, 800px);
 	  max-width: 100%;
 	  color: white;
 	  font-size: clamp(16px, 2vw + 1rem, 20px);
 	  line-height: 1.6;
+	  box-sizing: border-box;
+	  overflow-wrap: break-word;
 	}
   
 	h1 {
@@ -42,6 +44,25 @@ import SuperBlock from '../components/SuperBlock.astro';
 		background-size: 400%;
 		background-position: 0%;
 		animation: gradient-animation 5s infinite cubic-bezier(0.55, 0.085, 0.68, 0.53);
+	}
+
+	.inline-accent {
+		color: rgb(var(--accent-light));
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	@media (max-width: 640px) {
+		main {
+			padding: 0.85rem;
+			font-size: 0.98rem;
+			line-height: 1.5;
+		}
+
+		h1 {
+			font-size: clamp(2.25rem, 10vw, 3.2rem);
+			margin-bottom: 0.75rem;
+		}
 	}
 
 	/* Beautiful animation	 */

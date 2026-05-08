@@ -1,6 +1,6 @@
 <footer>
   <p>
-    <a href="https://github.com/ultrageopro">© 2024-2025 UltraGeoPro</a> & <a
+    <a href="https://github.com/ultrageopro">© 2024-2026 UltraGeoPro</a> & <a
       href="https://github.com/ultrageopro/ultrageosite">src</a
     >. <span id="quote"></span>
   </p>
@@ -39,5 +39,7 @@
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
   var quote = document.getElementById("quote");
-  quote.textContent = randomQuote;
+  if (quote) {
+    quote.textContent = randomQuote;
+  }
 </script>
